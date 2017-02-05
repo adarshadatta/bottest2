@@ -3,7 +3,6 @@ var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 
 var useEmulator = (process.env.NODE_ENV == 'development');
-//var useEmulator = true;
 
 var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
     appId: process.env['MicrosoftAppId'],
@@ -13,6 +12,10 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 });
 
 var bot = new builder.UniversalBot(connector);
+
+bot.dialog('/', function (session) {
+    session.send('You said ' + session.message.text);
+});
 
 if (useEmulator) {
     var restify = require('restify');
@@ -24,7 +27,3 @@ if (useEmulator) {
 } else {
     module.exports = { default: connector.listen() }
 }
-
-bot.dialog('/', function (session) {
-    session.send('You said ' + session.message.text);
-});
