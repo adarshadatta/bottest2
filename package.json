@@ -1,0 +1,22 @@
+{
+  "name": "bottest2",
+  "version": "1.0.0",
+  "description": "This is a bottest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adarshadatta/bottest2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adarshadatta/bottest2/issues"
+  },
+  "homepage": "https://github.com/adarshadatta/bottest2#readme",
+  "dependencies": {
+    "restify": "^4.3.0"
+  }
+}
